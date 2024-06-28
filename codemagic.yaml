@@ -23,19 +23,7 @@ workflows:
           include: true
       cancel_previous_builds: true
     scripts:
-      - name: Print Hello world to the console
-        script: 'echo Hello world'
-      - name: Print secure introduction
-        script: 'echo Value from test group is $INTRODUCTION'
-      - name: Print plain introduction
-        script: 'echo Plain Value from test group is $VISIBLE_INTRO'
-      - name: Print public environment variable to console
-        script: 'echo PUBLIC_ENV: $PUBLIC_ENV'
-      - name: Print FLUTTER_ROOT
-        script: 'echo FLUTTER_ROOT: $FLUTTER_ROOT'
-      - name: Print HOME
-        script: 'echo HOME: $HOME'
-      - name: Print CM_BUILD_DIR
-        script: 'echo CM_BUILD_DIR: $CM_BUILD_DIR'
-      - name: Print done
-        script: 'echo workflow done'
+      - name: Build android app
+        script: flutter build apk
+    artifacts:
+      - build/app/outputs/apk/**/*.apk
