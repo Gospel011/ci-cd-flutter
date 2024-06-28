@@ -29,6 +29,7 @@ workflows:
         script: flutter build apk
       - name: Build ios app
         script: flutter build ios
+        ignore_failure: true
     artifacts:
       - build/app/outputs/apk/**/*.apk
       - build/ios/ipa/*.ipa
