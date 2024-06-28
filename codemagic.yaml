@@ -5,7 +5,11 @@ workflows:
       groups:
         - my_test_group
     scripts:
-      - "echo Hello world"
-      - "echo Value from test group is $INTRODUCTION"
+      - name: Print Hello world to the console
+        script: "echo Hello world"
+      - name: Print secure introduction
+        script: "echo Value from test group is $INTRODUCTION"
+      - name: Print plain introduction
+        script: "echo Plain Value from test group is $VISIBLE_INTRO"
 
 
