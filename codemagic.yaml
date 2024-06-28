@@ -1,6 +1,8 @@
 workflows:
   hello-world-workflow:
     name: My Hello world workflow
+    instance_type: mac_mini_m1
+    max_build_duration: 10
     environment:
       groups:
         - my_test_group
@@ -30,3 +32,7 @@ workflows:
     artifacts:
       - build/app/outputs/apk/**/*.apk
       - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - ugochukwugospeli111@gmail.com
