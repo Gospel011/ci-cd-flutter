@@ -4,6 +4,8 @@ workflows:
     environment:
       groups:
         - my_test_group
+      vars:
+        PUBLIC_ENV: This is a public environment variable
     scripts:
       - name: Print Hello world to the console
         script: "echo Hello world"
@@ -11,5 +13,7 @@ workflows:
         script: "echo Value from test group is $INTRODUCTION"
       - name: Print plain introduction
         script: "echo Plain Value from test group is $VISIBLE_INTRO"
+      - name: Print public environment variable to console
+        script: "echo PUBLIC_ENV: $PUBLIC_ENV"
 
 
