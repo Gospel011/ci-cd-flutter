@@ -25,5 +25,8 @@ workflows:
     scripts:
       - name: Build android app
         script: flutter build apk
+      - name: Build ios app
+        script: flutter build ios
     artifacts:
       - build/app/outputs/apk/**/*.apk
+      - build/ios/ipa/*.ipa
