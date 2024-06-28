@@ -1,5 +1,11 @@
 workflows:
   hello-world-workflow:
     name: My Hello world workflow
+    environment:
+      groups:
+        - my_test_group
     scripts:
       - "echo Hello world"
+      - "echo Value from test group is $INTRODUCTION"
+
+
