@@ -16,6 +16,14 @@ workflows:
         - '$HOME/.gradle/caches' # gradle cache
         - '$HOME/Library/Caches/CocoaPods' # cocoapods cache
     scripts:
+      - name: Install Flutter SDK
+        script: |
+          if [ ! -d "$FLUTTER_ROOT/bin" ]; then
+            git clone https://github.com/flutter/flutter.git -b stable $FLUTTER_ROOT
+            $FLUTTER_ROOT/bin/flutter
+          else
+            echo "Flutter SDK is cached."
+          fi
       - name: Print Hello world to the console
         script: 'echo Hello world'
       - name: Print secure introduction
