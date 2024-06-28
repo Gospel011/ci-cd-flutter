@@ -12,6 +12,7 @@ workflows:
     cache:
       cache_paths:
         - '$FLUTTER_ROOT/.pub-cache' #dart cache
+        - '$FLUTTER_ROOT' #flutter sdk cache
         - '$HOME/.gradle/caches' # gradle cache
         - '$HOME/Library/Caches/CocoaPods' # cocoapods cache
     scripts:
